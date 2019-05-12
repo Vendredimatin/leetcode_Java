@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/array/array.iml" filepath="$PROJECT_DIR$/array/array.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bytedance/bytedance.iml" filepath="$PROJECT_DIR$/bytedance/bytedance.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/leetcode_Java.iml" filepath="$PROJECT_DIR$/.idea/leetcode_Java.iml" />
+    </modules>
+  </component>
+</project>
