@@ -415,7 +415,36 @@ public int maxSubArray3(int[] nums){
 1.  动态规划dp[i]含义收集：dp[i]表示以nums[i]结尾的最大子数组和
 2. 在开始想问题之前，思考是不是能用分治法
 
+### 26. Remove Duplicates from Sorted Array
 
+tag: array, two pointer
+
+#### method 1
+
+用两根指针，快慢指针法，慢指针left指示要被覆盖的位置，快指针right 判断是否出现不同的数
+
+```java
+public int method1(int[] nums){
+    int res = 1;
+    for (int right = 1,left = 1; right < nums.length; right++) {
+        if (nums[right] != nums[right-1]){
+            nums[left++] = nums[right];
+            res++;
+        }
+    }
+
+    return res;
+}
+```
+
+####　summary:
+
+1. 两根指针法中的快慢指针：两个指针的方向相同
+2. 
+
+####
+
+####
 
 
 

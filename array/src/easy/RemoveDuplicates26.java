@@ -2,8 +2,21 @@ package easy;
 
 public class RemoveDuplicates26 {
     public static void main(String[] args) {
-        int[] nums = {1,1,2};
-        System.out.println(new RemoveDuplicates26().removeDuplicates(nums));
+        int[] nums = {0,0,1,1,1,2,2,3,3,4};
+        System.out.println(new RemoveDuplicates26().method1(nums));
+    }
+
+
+    public int method1(int[] nums){
+        int res = 1;
+        for (int right = 1,left = 1; right < nums.length; right++) {
+            if (nums[right] != nums[right-1]){
+                nums[left++] = nums[right];
+                res++;
+            }
+        }
+
+        return res;
     }
 
     /**
