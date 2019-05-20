@@ -3,9 +3,25 @@ package easy;
 public class MaxSubArray53 {
     public static void main(String[] args) {
         int[] nums = {-2,1,-3,4,-1,2,1,-5,4};
-        System.out.println(new MaxSubArray53().maxSubArray3(nums));
+        System.out.println(new MaxSubArray53().method1(nums));
     }
 
+    public int method1(int[] nums){
+        int max = nums[0];
+        int curMax = nums[0];
+
+        for (int i = 1; i < nums.length; i++) {
+            max = Math.max(max,curMax);
+            curMax += nums[i];
+
+            if (curMax >= 0)
+                max = Math.max(max,curMax);
+            else
+                curMax = 0;
+        }
+
+        return max;
+    }
     /**
      * tag:Array,divide and Conquer,dynamic programming
      * 方法一：贪心，每加一个数都比较大小，当和小于0时，已经没必要继续加了，这也保证了最大子数组是连续的
