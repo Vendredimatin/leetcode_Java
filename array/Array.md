@@ -442,9 +442,50 @@ public int method1(int[] nums){
 1. 两根指针法中的快慢指针：两个指针的方向相同
 2. 
 
-####
+### 88. Merge Sorted Array
 
-####
+tag: array, two pointers
+
+#### method 1
+
+O(1) 空间复杂度的方法，两根指针法
+
+如果从前往后进行排序，那么要将后面的点依次往后排，如果从后往前排，就能解决这个问题
+
+```java
+public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int left = m-1;
+        int right = n-1;
+
+        for (int i = m+n-1; i >= 0 && left>= 0 && right >= 0; i--) {
+            if (nums1[left] > nums2[right]){
+                nums1[i] = nums1[left];
+                left--;
+            }else {
+                nums1[i] = nums2[right];
+                right--;
+            }
+        }
+
+        if (right >= 0){
+            for (int i = right; i >= 0; i--) {
+                nums1[i] = nums2[i];
+            }
+        }
+
+        System.out.println(Arrays.toString(nums1));
+    }
+```
+
+### summary:
+
+1. 在和array、有序相关的问题背景下，如果正向遍历难度比较大，可以反向思维，考虑反向遍历
+
+### 189. Rotate Array
+
+tag: array
+
+
 
 
 
