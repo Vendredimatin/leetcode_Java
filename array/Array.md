@@ -477,13 +477,72 @@ public void merge(int[] nums1, int m, int[] nums2, int n) {
     }
 ```
 
-### summary:
+#### summary:
 
 1. 在和array、有序相关的问题背景下，如果正向遍历难度比较大，可以反向思维，考虑反向遍历
 
 ### 189. Rotate Array
 
 tag: array
+
+#### method 1 使用额外数组
+
+#### method 2 Using Cyclic Replacements 
+
+使用循环替代，这个办法中要使用4个变量，current代表当前要移动的数，curIndex代表当前要移动的数的位置，next代表 current要移动到的位置上原本的数，nextIndex代表 current要被移动到的位置。基于的规则是这样的，每一次把当前数移到下一个它应该在的位置nextIndex上，为了避免使用额外数组存储，把nextIndex上的数重新赋给current，此时的next变为下一轮移动的current
+
+但使用这个方法要注意一点，或者说对数组循环都要注意点，当n是k的倍数时，很可能循环回原来的位置，举例如下：
+
+nums = {1,2,3,4,5,6}, k=2
+
+我们从位置0开始，移动三次，得到{5,2,1,4,3,6}，此时cureentIndex=2重新指回了1，然后就会一直循环下去，因此为了解决这个问题，要特殊处理，如下算法，for中多一层循环，检测是否回到了当初的位置
+
+```java
+public void rotate(int[] nums, int k) {
+        int nextIndex;
+        int current;
+        for (int i = 0; i < nums.length; curIndex++) {
+            int start = curIndex;
+            current = nums[curIndex];
+            do {
+                int nextIndex = (curIndex + k) % nums.length;
+                int next = nums[nextIndex];
+                nums[nextIndex] = current;
+                current = next;
+                curIndex = nextIndex;
+                i++;
+            }while (start != curIndex);
+    }
+}
+```
+#### method 3
+
+先反转整个数组，然后再翻转前k个元素，再翻转后n-k个元素
+
+```java
+public void rotate(int[] nums, int k) {
+        k %= nums.length;
+        reverse(nums, 0, nums.length - 1);
+        reverse(nums, 0, k - 1);
+        reverse(nums, k, nums.length - 1);
+    }
+    public void reverse(int[] nums, int start, int end) {
+        while (start < end) {
+            int temp = nums[start];
+            nums[start] = nums[end];
+            nums[end] = temp;
+            start++;
+            end--;
+        }
+    }
+```
+
+
+
+#### summary:
+
+1. 想要讲一组数往后/前移动k个位置，可以先移动整组数，然后再移动前k个，再移动后n-k个
+2. 循环替代中要注意是否会回到原位的情况
 
 
 
