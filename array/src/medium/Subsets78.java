@@ -16,8 +16,38 @@ import java.util.List;
 public class Subsets78 {
     public static void main(String[] args) {
         int[] nums = {1,2,3};
-        System.out.println(new Subsets78().subsets3(nums));
+        System.out.println(new Subsets78().subsets4(nums));
     }
+
+    public List<List<Integer>> m1(int[] nums){
+        List<List<Integer>> res = new ArrayList<>();
+
+        for (int i = 0; i < nums.length; i++) {
+            List<Integer> tmp = new ArrayList<>();
+            tmp.add(nums[i]);
+            res.add(tmp);
+            recursive(res, new ArrayList<>(tmp), nums, i);
+        }
+
+        return res;
+    }
+
+    private void recursive(List<List<Integer>> res, List<Integer> tmp, int[] nums, int i) {
+        if (i == nums.length-1)
+            return;
+
+        for (int j = i+1; j < nums.length; j++) {
+            List<Integer> newTmp = new ArrayList<>(tmp);
+            newTmp.add(nums[j]);
+            res.add(newTmp);
+            recursive(res,newTmp, nums, j);
+        }
+
+
+
+    }
+
+
     /**
      * tag: array, backtracking, bit manipulation
      * 方法一，使用回溯/递归的办法，list中每新添加一个数，就将它加入结果集中
@@ -45,13 +75,11 @@ public class Subsets78 {
             return;
 
         for (int i = start; i < nums.length; i++) {
-            List<Integer> newList1 = new ArrayList<>(list);
-            newList1.add(nums[i]);
-            res.add(newList1);
-            List<Integer> newList2 = new ArrayList<>(newList1);
-            find(newList2,nums,i+1,res);
+            List<Integer> newTmp = new ArrayList<>(list);
+            newTmp.add(nums[i]);
+            res.add(newTmp);
+            find(new ArrayList<>(newTmp),nums,i+1,res);
         }
-
     }
 
 
@@ -112,7 +140,9 @@ public class Subsets78 {
             List<Integer> subset = new ArrayList<>();
             for (int j = 0; j < n; j++)
             {
-                if (((1 << j) & i) != 0)
+                int tmp = (i >> j);
+                int res = tmp & 1;
+                if (res != 0)
                     subset.add(nums[j]);
             }
             Collections.sort(subset);

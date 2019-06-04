@@ -550,6 +550,218 @@ public void rotate(int[] nums, int k) {
 
 ## MEDIUM
 
+### 238. Product of Array Except Self
+
+tag: array
+
+#### method 1
+
+动态规划，使用两个动态数组。leftDp[i] 表示i左边的数的乘积，rightDp[i] 表示i右边的数的乘积，那么res[i] = leftDp[i] * leftDp[i]
+
+```java
+public int[] productExceptSelf1(int[] nums) {
+    int i, j;
+
+    int[] leftDP = new int[nums.length];
+    int[] rightDP = new int[nums.length];
+
+    int leftProduct = 1;
+    int rightProduct = 1;
+    leftDP[0] = 1;
+    rightDP[nums.length-1] = 1;
+
+    for (i = 1, j = nums.length-2; i < nums.length; i++,j--) {
+        leftProduct *= nums[i-1];
+        rightProduct *= nums[j+1];
+        leftDP[i] = leftProduct;
+        rightDP[j] = rightProduct;
+    }
+
+    int[] answer = new int[nums.length];
+    for (int k = 0; k < nums.length; k++) {
+        answer[k] = leftDP[k]*rightDP[k];
+    }
+
+    return answer;
+}
+```
+
+#### method 2
+
+观察method 1，其实不算严格意义上的动态规划，method 1使用了两个额外的数组，深入考虑我们发现，其实res[i] 相当于乘了左边的乘积之后乘右边的乘积，method 1是同时乘，这里可以把这两个过程分开，在一次循环中遍历两次
+
+```java
+public int[] productExceptSelf2(int[] nums) {
+    int i, j;
+    int leftProduct = 1;
+    int rightProduct = 1;
+
+    int[] answer = new int[nums.length];
+
+    for (int k = 0; k < answer.length; k++) {
+        answer[k] = 1;
+    }
+
+    for (i = 1, j = nums.length-2; i < nums.length; i++,j--) {
+        leftProduct *=nums[i-1];
+        rightProduct *= nums[j+1];
+
+        answer[i] *= leftProduct;
+        answer[j] *= rightProduct;
+    }
+
+    return answer;
+}
+```
+
+#### method 3
+
+相当于将method 2 中的一个循环拆成两个循环
+
+```java
+public int[] productExceptSelf3(int[] nums) {
+    int[] result = new int[nums.length];
+    for (int i = 0, tmp = 1; i < nums.length; i++) {
+        result[i] = tmp;
+        tmp *= nums[i];
+    }
+    for (int i = nums.length - 1, tmp = 1; i >= 0; i--) {
+        result[i] *= tmp;
+        tmp *= nums[i];
+    }
+    return result;
+}
+```
+
+#### summary：
+
+1. 优化时考虑能否将诸如储存累乘结果的数组简化为一个变量
+2. 一次循环两次遍历
+
+
+
+### 78. Subsets
+
+tag： array, backtracking,bit manipulation
+
+#### method 1
+
+使用回溯/递归的办法，list中每新添加一个数，就将它加入结果集中
+subsets里面的循环是寻找递归的起点
+find里面的循环是寻找第n层递归的起点，依次从前往后添加元素，以避免重复，第n层递归时，添加长度为n的子集
+
+```java
+public List<List<Integer>> subsets(int[] nums) {
+    List<List<Integer>> res = new ArrayList<>();
+
+    res.add(new ArrayList<>());
+    for (int i = 0; i < nums.length; i++) {
+        List<Integer> list = new ArrayList<>();
+        list.add(nums[i]);
+        res.add(list);
+        find(list,nums,i+1,res);
+    }
+
+    return res;
+}
+
+public void find(List<Integer> list,int[] nums, int start,List<List<Integer>> res){
+    if (start == nums.length)
+        return;
+
+    for (int i = start; i < nums.length; i++) {
+        List<Integer> newTmp = new ArrayList<>(list);
+        newTmp.add(nums[i]);
+        res.add(newTmp);
+        find(new ArrayList<>(newTmp),nums,i+1,res);
+    }
+}
+```
+
+
+
+#### method 2
+
+对解法一的优化，这样就少些声明，少用些空间并且简洁，和permutation一样，remove新添加的元素以避免创建新的数组
+
+```java
+public List<List<Integer>> subsets2(int[] nums) {
+    List<List<Integer>> list = new ArrayList<>();
+    Arrays.sort(nums);
+    backtrack(list, new ArrayList<>(), nums, 0);
+    return list;
+}
+
+private void backtrack(List<List<Integer>> list , List<Integer> tempList, int [] nums, int start){
+    list.add(new ArrayList<>(tempList));
+    for(int i = start; i < nums.length; i++){
+        tempList.add(nums[i]);
+        backtrack(list, tempList, nums, i + 1);
+        tempList.remove(tempList.size() - 1);
+    }
+}
+```
+
+#### method 3
+
+遍历数组，每次遍历都在前一次迭代的每一个结果后面加上当前遍历的数，当然，加之前要保留之前迭代的每一个结果
+
+```java
+public List<List<Integer>> subsets3(int[] nums) {
+    List<List<Integer>> list = new ArrayList<>();
+    list.add(new ArrayList<>());
+
+    for (int num:nums) {
+        int n = list.size();
+        for (int i = 0; i < n; i++) {
+            List<Integer> newList = new ArrayList<>(list.get(i));
+            newList.add(num);
+            list.add(newList);
+        }
+    }
+
+    return list;
+}
+```
+
+#### method 4
+
+位操作
+
+```java
+/**
+ * 位操作，没太看得懂，留着
+ *https://leetcode.com/problems/subsets/discuss/27278/C%2B%2B-RecursiveIterativeBit-Manipulation
+ * @param nums
+ * @return
+ */
+public List<List<Integer>> subsets4(int[] nums) {
+    int n = nums.length;
+    List<List<Integer>> subsets = new ArrayList<>();
+    for (int i = 0; i < Math.pow(2, n); i++)
+    {
+        List<Integer> subset = new ArrayList<>();
+        for (int j = 0; j < n; j++)
+        {
+            if (((1 << j) & i) != 0)
+                subset.add(nums[j]);
+        }
+        Collections.sort(subset);
+        subsets.add(subset);
+    }
+    return subsets;
+}
+```
+
+#### summary:
+
+1. 对得到所有子集/所有排列的递归总结
+   1. 递归内的循环是找第n层的的起点
+   2. 为了避免重复，要严格从左到右遍历
+2. 对得到所有自己/所有排列，也可以递归处理，每次都对所有的list添加当前数
+
+
+
 ### 73 Set Matrix Zeroes
 
 将每一个０所在行列全部设置为０，难点在于，一行／列中可能会有多个０，如果立马把所在行列全设置为０，可能会干扰其他行列

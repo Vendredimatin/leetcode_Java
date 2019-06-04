@@ -1,5 +1,7 @@
 package medium;
 
+import java.util.Arrays;
+
 /**
  * @program: leetcode
  * @description: leetcode 238
@@ -10,9 +12,27 @@ package medium;
 public class ProductExceptSelf238 {
     public static void main(String[] args) {
         int[] nums = {1,2,3,4};
-        System.out.println(new ProductExceptSelf238().productExceptSelf2(nums));
+        System.out.println(new ProductExceptSelf238().m2(nums));
     }
 
+    public int[] m2(int[] nums){
+        int leftProduct = 1;
+        int rightProduct = 1;
+
+        for (int i = 0; i < nums.length; i++) {
+            rightProduct *= nums[i];
+        }
+
+        int[] res = new int[nums.length];
+        for (int i = 0; i < nums.length; i++) {
+            rightProduct /= nums[i];
+            res[i] = rightProduct * leftProduct;
+            leftProduct *= nums[i];
+        }
+
+        System.out.println(Arrays.toString(res));
+        return res;
+    }
     /**
      * tag: array
      * 动态规划方法
