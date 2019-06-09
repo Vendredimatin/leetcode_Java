@@ -1,0 +1,9 @@
+
+O
+squid:S106"9Replace this use of System.out or System.err by a logger.(Š¤÷Ž
+;squid:S1659+"Declare "j" on a separate line.(¦¢Éëùÿÿÿÿ
+‰ squid:ForLoopCounterChangedCheckl"XRefactor the code in order to not assign to this loop counter from within the loop body.(’Üý üÿÿÿÿ
+;squid:S1659J"Declare "j" on a separate line.(¦¢Éëùÿÿÿÿ
+T
+squid:S106!"9Replace this use of System.out or System.err by a logger.(‰ÁŽëøÿÿÿÿ
+‰ squid:ForLoopCounterChangedCheckh"XRefactor the code in order to not assign to this loop counter from within the loop body.(’Üý üÿÿÿÿ

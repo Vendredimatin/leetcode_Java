@@ -15,7 +15,8 @@ public class Rotate48 {
 
     /**
      * tag:array
-     * summary:之前就找到了规律了，先根据斜对称轴对折，再根据中线y轴对折，但是想的太复杂，想一口气弄完两次对折，应该像这样，一次一次弄，分别弄开
+     * summary:之前就找到了规律了，先根据斜对称轴对折，再根据中线y轴对折，
+     * 但是想的太复杂，想一口气弄完两次对折，应该像这样，一次一次弄，分别弄开
      * @param matrix
      */
     public void rotate(int[][] matrix) {

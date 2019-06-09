@@ -1245,6 +1245,154 @@ public int maxProduct3(int[] nums) {
     }
 ```
 
+
+
+### 287. Find the Duplicate Number
+
+tag: array, binary search, two pointers
+
+#### method 1 sort
+
+#### method 2 set
+
+#### method 3 环检测算法（Floyd's Tortoise and Hare）
+
+这是链表环中的快慢指针迁移运用过来的算法，因为要找重复的数，并且不运用辅助的空间，那就是环检测算法。只是数组的环检测算法跟链表的环不一样，数组的环是由索引i和对应的值nums[i]构成的环, nums[i]作为下一步的i，因为有两个索引它们对应的值重复，所以构成了环
+
+环检测算法的解释可看：https://blog.csdn.net/xyzxiaoxiong/article/details/78761940作了详细的解释
+phase1 tortoise即第一次相遇点
+ phase2 因为在h点第一次相遇，而为什么b=F在链接中也解释的很清楚，虽然这个公式不是太准确，但可以由小及大
+
+ 第一个循环就是hare一次走两步，tortoise一次走一步，那么在有环的情况下，他们迟早相遇，tortoise即为相遇点
+ 第二个循环，令ptr1为头指针，令ptr2为相遇的几点，因为b=F那么，那么他们每次走一步，那么将在入口节点相遇
+
+```java
+public int findDuplicate(int[] nums) {
+    // Find the intersection point of the two runners.
+    int tortoise = nums[0];
+    int hare = nums[0];
+    do {
+        tortoise = nums[tortoise];
+        hare = nums[nums[hare]];
+    } while (tortoise != hare);
+
+    // Find the "entrance" to the cycle.
+    int ptr1 = nums[0];
+    int ptr2 = tortoise;
+    while (ptr1 != ptr2) {
+        ptr1 = nums[ptr1];
+        ptr2 = nums[ptr2];
+    }
+
+    return ptr1;
+}
+```
+
+#### method 4 Binary Search
+
+使用鸽笼原理，当数组内的数<= mid的个数多余mid时，将search范围放在mid～high，
+当个数小于等于mid时，将search范围放在low～mid，最后返回low/high（指的是索引）
+巧妙的运用二分法
+如n=10,mid=5,如果数组内小于等于5的个数多余5个，那么根据鸽笼原理，重复的数必在1～5内
+
+[原题解]: https://leetcode.com/problems/find-the-duplicate-number/discuss/72844/Two-Solutions-(with-explanation)%3A-O(nlog(n))-and-O(n)-time-O(1)-space-without-changing-the-input-array
+
+```java
+public int findDuplicate2(int[] nums) {
+    int low = 1, high = nums.length - 1;
+    while (low < high) {
+        int mid = (low + high) / 2;
+        int count = 0;
+
+        for (int num : nums) {
+            if (num <= mid) count++;
+        }
+
+        if (count <= mid) {
+            low = mid + 1;
+        } else {
+            high = mid;
+        }
+    }
+
+    return high;
+}
+```
+
+#### Summary:
+
+1. 环检测算法构建环，找重复
+2. 二分法和鸽笼原理的结合
+
+
+
+### 48. Rotate Image
+
+tag: array
+
+#### method 1
+
+规律：先根据斜对称轴交换，再根据y对称轴交换
+
+```java
+public void rotate(int[][] matrix) {
+    int n = matrix.length;
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j <= i; j++) {
+            int tmp = matrix[i][j];
+            matrix[i][j] = matrix[j][i];
+            matrix[j][i] = tmp;
+        }
+    }
+
+    int mid = matrix.length/2;
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < mid; j++) {
+            int tmp = matrix[i][j];
+            int symmetricalY = n-1-j;
+            matrix[i][j] = matrix[i][symmetricalY];
+            matrix[i][symmetricalY] = tmp;
+        }
+    }
+
+}
+```
+
+#### summary:
+
+1. summary:之前就找到了规律了，先根据斜对称轴对折，再根据中线y轴对折，但是想的太复杂，想一口气弄完两次对折，应该像这样，一次一次弄，分别弄开
+
+###  62. Unique Paths
+
+tag : array, dynamic programming
+
+很显然就使用dp，因为下一步的解决方案显然等于经过right的上一步的解决方案+经过down的上一步解决方案
+
+dp\[i][j] = dp\[i-1][j] + dp\[i][j-1]
+
+#### method 1
+
+```java
+public int uniquePaths(int m, int n) {
+    int[][] dp = new int[m][n];
+
+    dp[0][0] = 1;
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            if (i != 0)
+                dp[i][j] += dp[i-1][j];
+            if (j != 0)
+                dp[i][j] += dp[i][j-1];
+        }
+    }
+
+    return dp[m-1][n-1];
+}
+```
+
+
+
 ## HARD
 
 ### 84. Largest Rectangle in Histogram

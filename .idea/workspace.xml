@@ -2,9 +2,85 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="171dd17f-7c1e-43c2-bd62-94b08c6b3d16" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/0/10a0cdbfba11d7b9dc015616039bc315db5dcf16" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/0/50d52fd3bb137a1083cf28df9df5c215f7c59ad6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/8/68c7d62b98dabd5368c1c2a962ced70ace4715f2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/1/a150f4213dbe0580ef89361874e58de6d3472379" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/9/b98a207097cb5dcf0e1c49039be3946aba3eb033" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/f/bffa107766ebdd86b071da6defba227aa5528478" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/array/easy/ContainsDuplicate217.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/array/easy/Generate118.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/array/easy/MajorityElements169.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/array/easy/MaxProfit121.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/array/easy/MaxProfit122.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/array/easy/MaxSubArray53.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/array/easy/Merge88.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/array/easy/MissingNumber268.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/array/easy/MoveZeros283.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/array/easy/PlusOne66.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/array/easy/RemoveDuplicates26.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/array/easy/Rotate189.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/array/easy/TwoSum1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/array/hard/FirstMissingPositive41.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/array/hard/FndMedianSortedArrays4.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/array/hard/LargestRectangleArea84.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/array/medium/CanJump55$Index.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/array/medium/CanJump55.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/array/medium/Exist79.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/array/medium/FindDuplicate287.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/array/medium/FindPeakElement162.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/array/medium/GameOfLife289.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/array/medium/MaxArea11.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/array/medium/MaxProduct152.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/array/medium/ProductExceptSelf238.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/array/medium/Rotate48.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/array/medium/SearchRange34.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/array/medium/SetZeros73.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/array/medium/SortColors75.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/array/medium/SpiralOrder54.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/array/medium/Subsets78.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/array/medium/UniquePaths62.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/bytedance/CheckInclusion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/bytedance/LengthOfLongestSubstring.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/bytedance/LongestCommonPrefix.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/bytedance/Multiply.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/bytedance/ReverseWords.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/bytedance/arrayAndsort/FindCircleNum$UnionFind.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/bytedance/arrayAndsort/FindCircleNum.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/bytedance/arrayAndsort/FindKthLargest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/bytedance/arrayAndsort/FindLengthOfLCIS.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/bytedance/arrayAndsort/LongestConsecutive.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/bytedance/arrayAndsort/MaxAreaOfIsland.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/bytedance/arrayAndsort/Merge$Interval.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/bytedance/arrayAndsort/Merge.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/bytedance/arrayAndsort/Search.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/bytedance/arrayAndsort/ThreeSum.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/bytedance/arrayAndsort/Trap.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/bytedance/camp/First.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/bytedance/camp/Second.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/bytedance/dpAndGreedy/MaxProfit.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/bytedance/dpAndGreedy/MaxSubArray.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/bytedance/dpAndGreedy/MaximalSquare.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/bytedance/linkedlistAndTree/AddTwoNumbers$ListNode.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/bytedance/linkedlistAndTree/AddTwoNumbers.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/bytedance/linkedlistAndTree/DetectCycle$ListNode.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/bytedance/linkedlistAndTree/DetectCycle.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/bytedance/linkedlistAndTree/LowestCommonAncestor$TreeNode.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/bytedance/linkedlistAndTree/LowestCommonAncestor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/bytedance/linkedlistAndTree/MergeTwoLists$ListNode.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/bytedance/linkedlistAndTree/MergeTwoLists.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/bytedance/linkedlistAndTree/ReverseList$ListNode.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/bytedance/linkedlistAndTree/ReverseList.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/bytedance/linkedlistAndTree/SortList$ListNode.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/bytedance/linkedlistAndTree/SortList.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/bytedance/linkedlistAndTree/ZigzagLevelOrder$TreeNode.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/array/target/production/bytedance/linkedlistAndTree/ZigzagLevelOrder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/array/Array.md" beforeDir="false" afterPath="$PROJECT_DIR$/array/Array.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/array/src/medium/FindDuplicate287.java" beforeDir="false" afterPath="$PROJECT_DIR$/array/src/medium/FindDuplicate287.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/array/src/medium/Rotate48.java" beforeDir="false" afterPath="$PROJECT_DIR$/array/src/medium/Rotate48.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,20 +92,38 @@
     <session id="1991046575">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.1" value="2" />
+          <entry key="project.open.time.29" value="2" />
+          <entry key="project.open.time.30" value="1" />
+          <entry key="project.open.time.39" value="1" />
+          <entry key="project.open.time.40" value="1" />
+          <entry key="project.open.time.41" value="1" />
+          <entry key="project.open.time.42" value="1" />
+          <entry key="project.opened" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="2" />
+          <entry key="java" value="16" />
           <entry key="md" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="2" />
+          <entry key="JAVA" value="16" />
           <entry key="Markdown" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="4810" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="4810" />
         </counts>
       </usages-collector>
     </session>
@@ -37,15 +131,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/array/src/easy/Rotate189.java">
+        <entry file="file://$PROJECT_DIR$/array/src/medium/UniquePaths62.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            <state relative-caret-position="491">
+              <caret line="35" column="5" lean-forward="true" selection-start-line="21" selection-start-column="4" selection-end-line="35" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -53,11 +154,21 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/array/src/medium/FindDuplicate287.java" />
         <option value="$PROJECT_DIR$/bytedance/src/arrayAndsort/Search.java" />
         <option value="$PROJECT_DIR$/array/src/easy/MissingNumber268.java" />
         <option value="$PROJECT_DIR$/array/src/easy/MaxSubArray53.java" />
         <option value="$PROJECT_DIR$/array/src/easy/RemoveDuplicates26.java" />
+        <option value="$PROJECT_DIR$/bytedance/src/camp/First.java" />
+        <option value="$PROJECT_DIR$/bytedance/src/camp/Second.java" />
+        <option value="$PROJECT_DIR$/array/src/easy/Rotate189.java" />
+        <option value="$PROJECT_DIR$/array/src/medium/ProductExceptSelf238.java" />
+        <option value="$PROJECT_DIR$/array/src/medium/Subsets78.java" />
+        <option value="$PROJECT_DIR$/array/src/Demo.java" />
+        <option value="$PROJECT_DIR$/array/src/test140/InsufficientNodesinRoottoLeafPaths.java" />
+        <option value="$PROJECT_DIR$/array/src/test140/OccurrencesAfterBigram.java" />
+        <option value="$PROJECT_DIR$/array/src/test140/LetterTilePossibilities.java" />
+        <option value="$PROJECT_DIR$/array/src/medium/FindDuplicate287.java" />
+        <option value="$PROJECT_DIR$/array/src/medium/Rotate48.java" />
       </list>
     </option>
   </component>
@@ -69,9 +180,9 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="960" />
-    <option name="y" value="41" />
+    <option name="y" value="40" />
     <option name="width" value="960" />
-    <option name="height" value="1039" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -81,7 +192,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -105,12 +215,13 @@
               <item name="java_leetcode" type="462c0819:PsiDirectoryNode" />
               <item name="array" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="easy" type="462c0819:PsiDirectoryNode" />
+              <item name="medium" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -118,7 +229,7 @@
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559317199832" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560071413632" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -147,13 +258,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.RemoveDuplicates26">
-    <configuration name="MaxSubArray53" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="easy.MaxSubArray53" />
+  <component name="RunManager" selected="Application.LetterTilePossibilities">
+    <configuration name="Demo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Demo" />
+      <module name="array" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InsufficientNodesinRoottoLeafPaths" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test140.InsufficientNodesinRoottoLeafPaths" />
       <module name="array" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="easy.*" />
+          <option name="PATTERN" value="test140.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -161,12 +279,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RemoveDuplicates26" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="easy.RemoveDuplicates26" />
+    <configuration name="LetterTilePossibilities" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test140.LetterTilePossibilities" />
       <module name="array" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="easy.*" />
+          <option name="PATTERN" value="test140.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OccurrencesAfterBigram" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test140.OccurrencesAfterBigram" />
+      <module name="array" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test140.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Subsets78" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="medium.Subsets78" />
+      <module name="array" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="medium.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -175,13 +319,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.MaxSubArray53" />
-      <item itemvalue="Application.RemoveDuplicates26" />
+      <item itemvalue="Application.Subsets78" />
+      <item itemvalue="Application.Demo" />
+      <item itemvalue="Application.OccurrencesAfterBigram" />
+      <item itemvalue="Application.LetterTilePossibilities" />
+      <item itemvalue="Application.InsufficientNodesinRoottoLeafPaths" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.RemoveDuplicates26" />
-        <item itemvalue="Application.MaxSubArray53" />
+        <item itemvalue="Application.LetterTilePossibilities" />
+        <item itemvalue="Application.OccurrencesAfterBigram" />
+        <item itemvalue="Application.InsufficientNodesinRoottoLeafPaths" />
+        <item itemvalue="Application.Demo" />
+        <item itemvalue="Application.Subsets78" />
       </list>
     </recent_temporary>
   </component>
@@ -200,7 +350,16 @@
       <workItem from="1557796727122" duration="82000" />
       <workItem from="1558323987810" duration="1608000" />
       <workItem from="1558331591484" duration="1429000" />
-      <workItem from="1559311960203" duration="1947000" />
+      <workItem from="1559311960203" duration="2004000" />
+      <workItem from="1559385427994" duration="8183000" />
+      <workItem from="1559447730583" duration="1274000" />
+      <workItem from="1559550706307" duration="980000" />
+      <workItem from="1559553857163" duration="667000" />
+      <workItem from="1559649026176" duration="5286000" />
+      <workItem from="1559692545752" duration="66000" />
+      <workItem from="1560044520679" duration="779000" />
+      <workItem from="1560047518047" duration="4714000" />
+      <workItem from="1560062340032" duration="5429000" />
     </task>
     <task id="LOCAL-00001" summary="add array.md">
       <created>1557753443619</created>
@@ -216,39 +375,59 @@
       <option name="project" value="LOCAL" />
       <updated>1558325788262</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add array.md">
+      <created>1559317229992</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1559317229992</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add array.md">
+      <created>1559553936200</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1559553936200</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add array.md">
+      <created>1559692604579</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1559692604579</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7295000" />
+    <option name="totallyTimeSpent" value="34730000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2660858" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30093834" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="SonarLint" />
-      <window_info anchor="bottom" id="EvoSuite" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3295964" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39910313" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.09078014" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.21560283" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.22269504" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" />
-      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32907802" />
+      <window_info anchor="bottom" id="SonarLint" order="13" />
+      <window_info anchor="bottom" id="EvoSuite" order="14" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -258,6 +437,7 @@
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Database" order="8" />
+      <window_info anchor="right" id="Maven Projects" order="9" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,6 +449,24 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add array.md" />
     <option name="LAST_COMMIT_MESSAGE" value="add array.md" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/array/src/easy/Rotate189.java</url>
+          <line>14</line>
+          <properties />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="indexes" />
+        <watch expression="root.left.right" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/array/src/medium/FindPeakElement162.java">
@@ -283,13 +481,7 @@
     <entry file="file://$PROJECT_DIR$/array/src/hard/FirstMissingPositive41.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/array/src/medium/Subsets78.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/array/src/medium/SetZeros73.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/array/src/medium/FindDuplicate287.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/bytedance/src/LongestCommonPrefix.java">
@@ -383,10 +575,110 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/bytedance/src/camp/Second.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-360">
+          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/array/src/medium/ProductExceptSelf238.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="110" column="5" selection-start-line="110" selection-start-column="5" selection-end-line="110" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/array/src/Demo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" column="18" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/nio/ByteBuffer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="261" column="22" selection-start-line="261" selection-start-column="22" selection-end-line="261" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/array/src/test140/OccurrencesAfterBigram.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1043">
+          <caret line="49" column="26" selection-start-line="49" selection-start-column="26" selection-end-line="49" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/array/src/test140/InsufficientNodesinRoottoLeafPaths.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="45" column="34" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/array/src/test140/LetterTilePossibilities.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="46" column="5" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="46" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/array/src/easy/Rotate189.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="418">
+          <caret line="39" column="25" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/array/src/test140/SmallestSubsequenceofDistinctCharacters.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="52" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/array/src/medium/Subsets78.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="145" column="40" selection-start-line="142" selection-start-column="16" selection-end-line="145" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bytedance/src/camp/First.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="45" column="5" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/array/src/medium/FindDuplicate287.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="77" column="5" lean-forward="true" selection-start-line="59" selection-start-column="4" selection-end-line="77" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/array/src/medium/Rotate48.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/array/src/medium/UniquePaths62.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="491">
+          <caret line="35" column="5" lean-forward="true" selection-start-line="21" selection-start-column="4" selection-end-line="35" selection-end-column="5" />
         </state>
       </provider>
     </entry>

@@ -1,0 +1,6 @@
+
+Ssquid:S1854 "7Remove this useless assignment to local variable "sum".(Õ‡Ãÿÿÿÿÿ
+O
+squid:S106-"9Replace this use of System.out or System.err by a logger.( ›¢Æ
+Dsquid:S1481 "(Remove this unused "sum" local variable.(Õ‡Ãÿÿÿÿÿ
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ë”¸»úÿÿÿÿ

@@ -49,7 +49,8 @@ public class FindDuplicate287 {
     }
 
     /**
-     * binary search 使用鸽笼原理，当数组内的数<= mid的个数多余mid时，将search范围放在mid～high，当个数小于等于mid时，将search范围放在low～mid，最后返回low/high（指的是索引）
+     * binary search 使用鸽笼原理，当数组内的数<= mid的个数多余mid时，将search范围放在mid～high，
+     * 当个数小于等于mid时，将search范围放在low～mid，最后返回low/high（指的是索引）
      * 巧妙的运用二分法
      * 如n=10,mid=5,如果数组内小于等于5的个数多余5个，那么根据鸽笼原理，重复的数必在1～5内
      * https://leetcode.com/problems/find-the-duplicate-number/discuss/72844/Two-Solutions-(with-explanation)%3A-O(nlog(n))-and-O(n)-time-O(1)-space-without-changing-the-input-array
