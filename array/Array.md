@@ -1505,6 +1505,142 @@ public void gameOfLife2(int[][] board) {
 3. 使用Math.max/min来判断边界，减少if
 4. method 2 中还考虑了有几种状态，从而使用位操作
 
+
+
+### 11. Container With Most Water
+
+tag: array, two pointers
+
+#### method 1 brute force
+
+暴力解，两层遍历循环. 简单地考虑每个可能的线对的面积，并找出其中的最大面积。
+
+```java
+public class Solution {
+    public int maxArea(int[] height) {
+        int maxarea = 0;
+        for (int i = 0; i < height.length; i++)
+            for (int j = i + 1; j < height.length; j++)
+                maxarea = Math.max(maxarea, Math.min(height[i], height[j]) * (j - i));
+        return maxarea;
+    }
+}
+```
+
+#### method 2 two pointers
+
+找到最高的线，然后找到左边的最高的线和右边的最高的线，他们之间的面积就是最大的面积。如果有多个相同的最高线，可能要尝试多次
+
+#### method 3
+
+两根指针法，left和right，每次移动短的那一段，因为如果移动大的，那么在另一端不变的情况下，水量可能会变小，首先宽变小一位，而高度始终是以小的算的。相对来说移动小的，在宽度变小的情况下，更容易获得更大的面积
+
+```java
+public int maxArea(int[] height) {
+        int left = 0, right = height.length - 1;
+        int maxArea = 0;
+
+        while (left < right) {
+            maxArea = Math.max(maxArea, Math.min(height[left], height[right])
+                    * (right - left));
+            if (height[left] < height[right])
+                left++;
+            else
+                right--;
+        }
+
+        return maxArea;
+    }
+```
+
+
+
+#### summary:
+
+1.  思考逻辑链：算面积->需要知道长宽-> 宽的话取决于两边短的一边-> 两边-> 两个指针法
+2. 以什么样得标准遍历能得到更大的面积，移动短那一段
+
+
+
+### 75. Sort Colors
+
+tag: array, two pointers
+
+#### method 1
+
+two-pass 算法，第一遍记录0，1，2出现的次数，第二遍重写数组
+
+#### method 2
+
+one-pass 算法，两根指针法，交换0和2，这样当0和2排序好后，1也会自动排好序的
+
+```java
+public void sortColors(int[] nums) {
+        int left=0,right = nums.length-1;
+
+        for (int i = 0; i <= right; i++) {
+            if (nums[i] == 0 && left < right) swap(nums,i,left++);
+            else if (nums[i] == 2 && left < right) swap(nums,i--,right--);
+        }
+    }
+
+    public void swap(int[] nums,int desc,int source){
+        int tmp = nums[desc];
+        nums[desc] = nums[source];
+        nums[source] = tmp;
+    }
+```
+
+#### summary:
+
+1. 需要在数组上交换而不引入额外空间-> 两根指针
+2. 反面思考：在考虑的时候思考过于复杂，总是想着怎么排布三个数，其实只要排好0和2，那么1就可以自动排好。对于n维的问题，其实有时候思考处理n-1维就够了
+
+
+
+### 105. Construct Binary Tree from Preorder and Inorder Traversal
+
+tag : tree, Depth-first Search, tree
+
+前序第一个肯定是当前根节点，所以在中序中查找这个根节点所在的位置，那么中序中根节点之前的数都是左子树，以后的数都是右子树
+
+```java
+ public TreeNode buildTree(int[] preorder, int[] inorder) {
+        TreeNode head = buildTree(preorder,inorder,0,0,preorder.length-1);
+        return head;
+    }
+
+    private TreeNode buildTree(int[] preorder, int[] inorder, int preStart, int inStart, int inEnd) {
+        if (inStart == inEnd)
+            return new TreeNode(preorder[preStart]);
+        else if (inStart > inEnd)
+            return null;
+
+        TreeNode head = new TreeNode(preorder[preStart]);
+        int index = getIndex(inorder,preorder[preStart]);
+
+        // preStart-1 即新左子树的根节点， index-1即当前根节点之前的数都属于左子树的节点
+        head.left = buildTree(preorder,inorder,preStart+1,inStart,index-1);
+        // index+preStart-instart+1 因为在前序中，根节点之后会先接左子树节点，然后才是右子树的节点，所以index-instart就是左子树节点的个数，preStart + 左子树节点数+1 就是在前序中右子树开始的位置，在中序中，从当前根节点的位置index出发，所以是index + 1
+        head.right = buildTree(preorder,inorder,index+preStart-inStart+1, index+1, inEnd);
+
+        return head;
+    }
+
+    public int getIndex(int[] order, int key){
+        for (int i = 0; i < order.length; i++) {
+            if (key == order[i]) return i;
+        }
+        return -1;
+    }
+```
+
+
+
+
+
+
+
 ## HARD
 
 ### 84. Largest Rectangle in Histogram
