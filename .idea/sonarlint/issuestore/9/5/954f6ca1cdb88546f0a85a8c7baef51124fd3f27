@@ -1,0 +1,8 @@
+
+T
+squid:S1066"9Replace this use of System.out or System.err by a logger.(”Çìäùÿÿÿÿ
+;squid:S1659K"Declare "n" on a separate line.(ÚÜÂ˜þÿÿÿÿ
+nsquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(©œÆžúÿÿÿÿ
+bsquid:CommentedOutCodeLineQ"<This block of commented-out lines of code should be removed.(…´Ï¨
+csquid:S1871."LThis branch's code block is the same as the block for the branch on line 44.(€Ý©Ã
+isquid:S3776I"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(Àìâº

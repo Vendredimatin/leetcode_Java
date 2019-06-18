@@ -1,0 +1,4 @@
+
+‰ squid:ForLoopCounterChangedCheck"XRefactor the code in order to not assign to this loop counter from within the loop body.(²ϊ°πώÿÿÿÿ
+?squid:S1659"#Declare "right" on a separate line.(Ο¶μ„ϋÿÿÿÿ
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(η©Χ–όÿÿÿÿ

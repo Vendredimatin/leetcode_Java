@@ -1,0 +1,5 @@
+
+bsquid:S30270"FPut single-quotes around ' ' to use the faster "indexOf(char)" method.(Œß‰øÿÿÿÿ
+wsquid:S1488$"[Immediately return this expression instead of assigning it to the temporary variable "res".(Óöµúÿÿÿÿ
+rsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Öàá¯
+[squid:UselessImportCheck"2Remove this unused import 'java.util.Collections'.(¢³ïÓşÿÿÿÿ

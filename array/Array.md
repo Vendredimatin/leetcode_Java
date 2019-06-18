@@ -1635,9 +1635,332 @@ tag : tree, Depth-first Search, tree
     }
 ```
 
+### 79. Word Search
+
+tag : array, backtracking
+
+#### method 1
+
+使用一个访问辅助数组，在每次访问时置为true，如果这次访问没有得到完整的目标word，就再把辅助访问数组对应的值置为false
+
+```java
+boolean[][] visit;
+
+public boolean exist(char[][] board, String word) {
+    visit = new boolean[board.length][board[0].length];
+
+    for (int i = 0; i < board.length; i++) {
+        for (int j = 0; j < board[i].length; j++) {
+            if (board[i][j] == word.charAt(0)) {
+                if (exist2(board, word, 0, i, j))
+                    return true;
+            }
+        }
+    }
+    return false;
+}
+
+private boolean exist(char[][] board, String word, int index, int i, int j) {
+    if (index == word.length())
+        return true;
+
+    if (i < 0 || i >= board.length || j < 0 || j >= board[i].length || visit[i][j] || board[i][j] != word.charAt(index) || visit[i][j])
+        return false;
+
+    visit[i][j] = true;
+    if (exist(board, word, index + 1, i + 1, j) || exist(board, word, index + 1, i, j + 1) || exist(board, word, index + 1, i - 1, j) || exist(board, word, index + 1, i, j - 1))
+        return true;
+
+    visit[i][j] = false;
+    return false;
+}
+```
+
+#### method 2
+
+可以对method 1 进行优化，使得空间复杂度变为O(1)
+
+即在访问时，将该位置的字符置为其他不存在干扰的字符，当访问结束没有得到完整的目标word时，再置回，运用了位操作
+
+```java
+private boolean exist2(char[][] board, String word, int index, int y, int x) {
+    if (index == word.length()) return true;
+    if (y < 0 || x < 0 || y == board.length || x == board[y].length) return false;
+    if (board[y][x] != word.charAt(index)) return false;
+    board[y][x] ^= 256;
+    boolean exist = exist(board, word, index + 1, y, x + 1)
+            || exist(board, word, index + 1, y, x - 1)
+            || exist(board, word,index+1,y + 1, x)
+            || exist(board, word,index+1,y - 1, x);
+    board[y][x] ^= 256;
+    return exist;
+}
+```
+
+#### summary：
+
+1. 需要记录访问呢轨迹时，使用一个访问数组，并且在这个分支回溯完成后，把访问数组中该位置置回原来的值
+2. 也可以不用访问数组，那么就必须标记这个位置的数已经被访问过，可以
+   1. 使用其他根本不会干扰的字符，结束之后再置回原来的数，使用位操作^256
+   2. 在不会再被访问的位置标记该数（见73）
 
 
 
+### 162. Find Peak Element
+
+tag: array, binary search
+
+#### method 1
+
+线性扫描，遍历每一个数，比较是否左边的数要低一点，右边的数要高一点。
+
+当然，如果发现右边的数要低一点，就没有必要再看右边的数是否符合，直接看右边的数的下一个数
+
+```java
+public int findPeakElement(int[] nums) {
+    for (int i = 1; i < nums.length-1; i++) {
+        if (nums[i] > nums[i+1]){
+            if (nums[i] > nums[i-1])
+                return i;
+            else i++;
+        }
+    }
+
+    return 0;
+}
+```
+
+#### method 2  binary search
+
+这样的题使用二分查找，一开始还是很惊奇的，因为印象中都是对有序数组才使用二分法，但这是对二分法的误解，要理解二分法的精髓在于在每一步都减少待搜索的区间
+
+考虑本题，一个数mid根据和其右边的数进行比较，可以得到该数是在下降的斜坡上还是在上升的斜坡，如果右边的数更小，可以认为是在下降的斜坡上，那么峰值一定是在mid的左边（包含其本身）；如果右边的数更大，可以认为是在上升的斜坡上，那么峰值一定是在mid的右边，所以搜索范围可以限制在mid及其右边的子数组
+
+```java
+public int findPeakElement(int[] nums) {
+        int l = 0, r = nums.length - 1;
+        while (l < r) {
+            int mid = (l + r) / 2;
+            if (nums[mid] > nums[mid + 1])
+                r = mid;
+            else
+                l = mid + 1;
+        }
+        return l;
+    }
+```
+
+当然，比如右边的数比mid更大，是在上升的斜坡中，将舍弃mid左边的子数组中也可能存在peak元素，但本题不是求最大的数，本题只要求找到一个peak即可，甚至边界值（i=0，i=n-1）也算peak，所以才可以这样使用二分法
+
+#### summary:
+
+1. 使用二分法减少搜索空间
+
+
+
+
+
+### 73. Set Matrix Zeros
+
+tag： array
+
+#### method 1 
+
+使用辅助数组表示那些列和行会被置0
+
+#### method 2
+
+将原本为0的位置标记为其他数n，但在实际测试中，测试用例总会有原本数组中就出现这个数n，所以造成干扰，因此这个方法有一定缺陷
+
+#### method 3
+
+还是标记法，但为了降低干扰的程度，当一个数为0，就把其所在行和列的第一个数置为0，然后遍历第一行和第一列，如果有0，那么就将改行/该列置为0。这样，只会干扰到第一列和第一行，因此提前遍历第一列和第一行他们本身的数确定第一列和第一行会不会被置为0
+
+```java
+public void setZeroes(int[][] matrix) {
+        boolean isRowZero = false;
+        for (int i = 0; i < matrix[0].length; i++) {
+            if (matrix[0][i] == 0) isRowZero = true;
+        }
+
+        boolean isColZero = false;
+        for (int j = 0; j < matrix.length; j++) {
+            if (matrix[j][0] == 0) isColZero = true;
+        }
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] == 0){
+                    matrix[0][j] = 0;
+                    matrix[i][0] = 0;
+                }
+            }
+        }
+
+        for (int i = 1; i < matrix.length; i++) {
+            if (matrix[i][0] == 0) {
+                for (int j = 0; j < matrix[i].length; j++) {
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+
+        for (int j = 1; j < matrix[0].length; j++) {
+            if (matrix[0][j] == 0){
+                for (int i = 0; i < matrix.length; i++) {
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+
+        if (isRowZero){
+            for (int j = 0; j < matrix[0].length; j++) {
+                matrix[0][j] = 0;
+            }
+        }
+        if (isColZero){
+            for (int i = 0; i < matrix.length; i++) {
+                matrix[i][0] = 0;
+            }
+        }
+        
+    }
+```
+
+#### summary:
+
+1. 为了避免使用辅助数组，而使用标记法时，要思考将当前数进行in place 标记会不会对后面的数造成误判，所以可以考虑将干扰的程度降低到常数级别，例如本题只会影响第一行和第一列这两个数组
+
+### 56. Merge Intervals
+
+#### method 1
+
+将每个区间进行排序，按照start进行排序，start小的排在前面，遍历排序后的intervals，如果第n个interval的end < 第n+1个的interval的start，那么就将第n个interval当作一个新的interval加入结果中。如果第n个interval的end >= 第n+1个的interval的start，那么就进行合并，end取两个区间中最大那一个
+
+```java
+class Solution {
+    private class IntervalComparator implements Comparator<Interval> {
+        @Override
+        public int compare(Interval a, Interval b) {
+            return a.start < b.start ? -1 : a.start == b.start ? 0 : 1;
+        }
+    }
+
+    public List<Interval> merge(List<Interval> intervals) {
+        Collections.sort(intervals, new IntervalComparator());
+
+        LinkedList<Interval> merged = new LinkedList<Interval>();
+        for (Interval interval : intervals) {
+            // if the list of merged intervals is empty or if the current
+            // interval does not overlap with the previous, simply append it.
+            if (merged.isEmpty() || merged.getLast().end < interval.start) {
+                merged.add(interval);
+            }
+            // otherwise, there is overlap, so we merge the current and previous
+            // intervals.
+            else {
+                merged.getLast().end = Math.max(merged.getLast().end, interval.end);
+            }
+        }
+
+        return merged;
+    }
+}
+```
+
+#### summary：
+
+1. 排序后只要认真讨论情况，就能解决这个问题
+
+### 34. Find First and Last Position of Element in Sorted Array
+
+tag：array， binary search
+
+#### method 1 
+
+遍历数组，得到最小最大
+
+#### method 2 binary search
+
+首先，按照正常binary search首先在mid处找到一个target，因为数组已经排序好了，如果还有其他的target，那一定是在target的左边还有右边，如果有，那就分别以mid-1作为最右边界/mid+1作为最左边界继续查找，得到position更小/更大的数
+
+```java
+public int[] searchRange(int[] nums, int target) {
+    int first = Integer.MAX_VALUE, last = Integer.MIN_VALUE;
+    int[] ans = searchRange(nums, target, 0, nums.length - 1,first,last);
+
+    if (ans[0] == Integer.MAX_VALUE)
+        return new int[]{-1,-1};
+    return ans;
+}
+
+public int[] searchRange(int[] num, int target, int l, int r, int first, int last) {
+    if (l > r) return new int[]{first, last};
+
+    int mid = (l + r) / 2;
+    if (num[mid] == target){
+      first = Math.min(first,mid);
+      last = Math.max(last,mid);
+      int[] ans = new int[2];
+      if (mid > 0 && num[mid-1] == target){
+          ans = searchRange(num,target,l,mid-1,first,last);
+          first = Math.min(first,ans[0]);
+      }
+      if (mid < num.length-1 && num[mid+1] == target){
+          ans = searchRange(num,target,mid+1,r,first,last);
+          last = Math.max(last,ans[1]);
+      }
+      return new int[]{first,last};
+    } else if (num[mid] > target)
+        return searchRange(num, target, l, mid-1, first, last);
+    else return searchRange(num, target, mid+1, r, first, last);
+}
+```
+
+#### summary
+
+1. 有序数组中查找数，很自然地就想到binary search
+
+
+
+### 33. Search in Rotated Sorted Array
+
+tag : array, binary search
+
+#### method 1 binary search
+
+观察题目发现，因为数组被旋转了，所以可以确定，左边被旋转的那一部分的第一个数比右边被旋转的部分都大，右边被旋转的最后一个数也是比左边被旋转的所有数都小，所以每次二分查找时，判断mid的左边和右边是否正常，比较target和nums[start]的大小关系，如果nums[start] 比 target大，说明target应该位于mid的右边
+
+```java
+public int search(int[] nums, int target) {
+    int start = 0;
+    int end = nums.length - 1;
+    while (start <= end){
+        int mid = (start + end) / 2;
+        if (nums[mid] == target)
+            return mid;
+
+        if (nums[start] <= nums[mid]){
+            if (target < nums[mid] && target >= nums[start])
+                end = mid - 1;
+            else
+                start = mid + 1;
+        }
+
+        if (nums[mid] <= nums[end]){
+            if (target > nums[mid] && target <= nums[end])
+                start = mid + 1;
+            else
+                end = mid - 1;
+        }
+    }
+    return -1;
+}
+```
+
+#### summary
+
+1. 虽然数组被改变过，但部分还是有序的，所以仍然可以使用二分查找
 
 
 

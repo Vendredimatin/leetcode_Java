@@ -64,6 +64,5 @@ public class SetZeros73 {
             }
         }
 
-        System.out.println(Arrays.toString(matrix));
     }
 }
