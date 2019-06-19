@@ -1962,6 +1962,380 @@ public int search(int[] nums, int target) {
 
 1. 虽然数组被改变过，但部分还是有序的，所以仍然可以使用二分查找
 
+### 55. Jump Game
+
+tag: array,greedy, dynamic programming
+
+#### method 1 backtracking
+
+回溯遍历，每跳到一个位置i，就遍历i~i+nums[i]这些位置之中是否能过跳到终点，如果有一个能达到终点，就返回true
+
+但这个方法超时了
+
+```java
+private boolean canJump(int[] nums, int start, int max) {
+        if (nums[start] == 0 && start != nums.length-1)
+            return false;
+        if (start + max >= nums.length-1)
+            return true;
+
+        for (int i = max; i >= 1; i--) {
+           if (canJump(nums,start+i,nums[start+i]))
+                return true;
+        }
+
+        return false;
+    }
+```
+
+
+
+#### method 2
+
+自顶向下动态规划，从method 1中我们可以看出，有些位置会重复遍历，因此我们引入记忆化搜索，还会回溯，但每到一个位置i时，先查看该位置是否是能够到达终点的位置(GOOD), 还是不能到达终点的位置(BAD),如果是不知道的位置(UNKNOWN)，则遍历这个位置
+
+通过使用dp降低了复杂度，存储了index i是否能到达终点的结果，当再经过这些index的时候不再需要计算
+
+```java
+enum Index {
+        GOOD, BAD, UNKNOWN
+}
+
+Index[] index;
+
+private boolean canJump2(int[] nums, int start) {
+    start = Math.min(start,nums.length-1);
+
+    if (index[start] != Index.UNKNOWN)
+        return (index[start] == Index.GOOD)?true:false;
+
+    int max = nums[start];
+    for (int i = max; i >= 1; i--) {
+        if (canJump2(nums,start+i)){
+            index[start] = Index.GOOD ;
+            return true;
+        }
+    }
+
+    index[start] = Index.BAD;
+    return false;
+}
+```
+
+#### method 3
+
+自底向上，从右边开始跳，递归转循环.先将每一个Index置为UNKNOWN，再把最后一个INDEX置为GOOD
+
+```java
+public boolean canJump３(int[] nums) {
+        Index[] memo = new Index[nums.length];
+        for (int i = 0; i < memo.length; i++) {
+            memo[i] = Index.UNKNOWN;
+        }
+        memo[memo.length - 1] = Index.GOOD;
+
+        for (int i = nums.length - 2; i >= 0; i--) {
+            int furthestJump = Math.min(i + nums[i], nums.length - 1);
+            for (int j = i + 1; j <= furthestJump; j++) {
+                if (memo[j] == Index.GOOD) {
+                    memo[i] = Index.GOOD;
+                    break;
+                }
+            }
+        }
+
+        return memo[0] == Index.GOOD;
+    }
+```
+
+#### method 4 Greedy
+
+从method 3 中再次得到启发，如果在位置i，且i~nums[i]+i这之中有一个GOOD INDEX，那么代表位置i也是个GOOD INDEX
+
+遍历完如果lastPos = 0 则表示起点也是good Index，那么从起点也可以跳到终点
+
+```java
+public boolean canJump４(int[] nums) {
+        int lastPos = nums.length - 1;
+        for (int i = nums.length - 1; i >= 0; i--) {
+            if (i + nums[i] >= lastPos) {
+                lastPos = i;
+            }
+        }
+        return lastPos == 0;
+    }
+```
+
+#### summary：
+
+1. （当方法超时的时候）发现是不是有些步骤被重复计算，如果有重复计算，那么就引入动态规划
+2. 反向思考，问的是从起点到终点，如果能从终点到起点，结果也是等价的
+3. 使用greedy 简化动态规划，进一步看清问题的本质
+
+### 54. Spiral Matrix
+
+tag：array
+
+#### method 1
+
+使用一个辅助数组表示某个位置(i,j)是否被访问过，如果下一个位置越界或者是访问过的，那说明该换方向了
+
+```java
+public List<Integer> spiralOrder(int[][] matrix) {
+        boolean right = true, down = false, left = false, up = false;
+        boolean[][] visit = new boolean[matrix.length][matrix[0].length];
+
+        List<Integer> list = new ArrayList<>();
+        int total = matrix.length * matrix[0].length;
+        int i = 0, j = 0;
+        while (true) {
+            if (total == 0)
+                break;
+
+            if (right) {
+                if (j == matrix[i].length || visit[i][j]) {
+                    right = false;
+                    down = true;
+                    i++;
+                    j--;
+                    continue;
+                } else {
+                    list.add(matrix[i][j]);
+                    visit[i][j] = true;
+                    j++;
+                }
+            }
+
+            if (down) {
+                if (i == matrix.length || visit[i][j]) {
+                    down = false;
+                    left = true;
+                    i--;
+                    j--;
+                    continue;
+                } else {
+                    list.add(matrix[i][j]);
+                    visit[i][j] = true;
+                    i++;
+                }
+            }
+
+            if (left) {
+                if (j == -1 || visit[i][j]) {
+                    left = false;
+                    up = true;
+                    j++;
+                    i--;
+                    continue;
+                } else {
+                    list.add(matrix[i][j]);
+                    visit[i][j] = true;
+                    j--;
+                }
+            }
+
+            if (up) {
+                if (i == -1 || visit[i][j]) {
+                    up = false;
+                    right = true;
+                    i++;
+                    j++;
+                    continue;
+                } else {
+                    list.add(matrix[i][j]);
+                    visit[i][j] = true;
+                    i--;
+                }
+            }
+
+            total--;
+        }
+
+        return list;
+    }
+```
+
+#### method 2
+
+上面的方法中，if和else过多过于繁杂，观察题目我们可以发现，遍历的方向是有顺序的，永远是往右，往下，往左，往上。因此，我们可以通过加法+求余来得到下一个方向，因此，也能够知道x，y该加还是该减，还是该不变
+
+dr 表示row上的操作，dc 表示在column上的操作，当往左或往右时，行数不变，因此dr[0]/dr[2]都为0
+
+```java
+class Solution {
+    public List<Integer> spiralOrder(int[][] matrix) {
+        List ans = new ArrayList();
+        if (matrix.length == 0) return ans;
+        int R = matrix.length, C = matrix[0].length;
+        boolean[][] seen = new boolean[R][C];
+        int[] dr = {0, 1, 0, -1};
+        int[] dc = {1, 0, -1, 0};
+        int r = 0, c = 0, di = 0;
+        for (int i = 0; i < R * C; i++) {
+            ans.add(matrix[r][c]);
+            seen[r][c] = true;
+            int cr = r + dr[di];
+            int cc = c + dc[di];
+            if (0 <= cr && cr < R && 0 <= cc && cc < C && !seen[cr][cc]){
+                r = cr;
+                c = cc;
+            } else {
+                di = (di + 1) % 4;
+                r += dr[di];
+                c += dc[di];
+            }
+        }
+        return ans;
+    }
+}
+```
+
+
+
+#### summary：
+
+1. 如果题目的方向是有规律的，是有循环的，那么可以使用加法和求余来控制方向！
+
+### 15. 3Sum
+
+tag: array, two pointers
+
+#### method 1
+
+可以将3sum问题转换为2sum问题，然后再用2sum的办法解决。这里使用两个指针的方法
+
+先对数组排序，这是为了让指针更好地移动，让指针有方向
+
+遍历每一个索引i上的数nums[i]，然后讨论i+1~length-1这个范围内是否有数的和等于nums[i]的负数
+
+```java
+public List<List<Integer>> threeSum(int[] nums) {
+    Arrays.sort(nums);
+    List<List<Integer>> res = new ArrayList<>();
+
+    for (int i = 0; i < nums.length-2; i++) {
+
+        if (i == 0 || (i > 0 && nums[i] != nums[i-1])){
+            int low = i+1, high = nums.length-1, sum = -nums[i];
+            while (low < high){
+                if (nums[low] + nums[high] == sum){
+                    res.add(Arrays.asList(nums[i],nums[low],nums[high]));
+                    while (low < high && nums[low] == nums[low+1]) low++;
+                    while (low < high && nums[high] == nums[high-1]) high--;
+                    low++;high--;
+                }else if (nums[low] + nums[high] < sum) low++;
+                else high--;
+            }
+        }
+    }
+
+    return res;
+}
+```
+
+#### summary :
+
+1. 在使用两根指针的时候，考虑一下是否需要排序，让指针的移动更具有方向性
+2. 当处理去除重复性问题时，既可以使用set自动去重，也可以进行排序，当数重复的时候便跳过
+
+### 152. Maximum Product Subarray
+
+#### method 1
+
+单纯用Maximum Sum Subarray的方法来做本道题是错的，问题就在于dp[1]可能不仅和dp[i-1]有关，甚至和dp[i-2]有关，例如负，正，负的情况，在这样的情况下，dp不仅需要记录以i-1结尾的最大积，也需要记录以i-1结尾的最小积，因为如果异数相乘，就变成了一个负数
+
+```java
+public int maxProduct(int[] nums) {
+    int[] dpMax = new int[nums.length];
+    int[] dpMin = new int[nums.length];
+    dpMax[0] = nums[0];
+    dpMin[0] = nums[0];
+    int res = nums[0];
+
+    for (int i = 1; i < nums.length; i++) {
+        dpMax[i] = Math.max(Math.max(dpMax[i-1]*nums[i],dpMin[i-1]*nums[i]),nums[i]);
+        dpMin[i] = Math.min(Math.min(dpMax[i-1]*nums[i],dpMin[i-1]*nums[i]),nums[i]);
+        res = Math.max(res,dpMax[i]);
+    }
+    return res;
+}
+```
+
+#### method 2
+
+对method 1的改进
+
+使用两个变量来代替两个dp
+
+```java
+public int maxProduct2(int[] A) {
+        if (A == null || A.length == 0) {
+            return 0;
+        }
+        int max = A[0], min = A[0], result = A[0];
+        for (int i = 1; i < A.length; i++) {
+            int temp = max;
+            max = Math.max(Math.max(max * A[i], min * A[i]), A[i]);
+            min = Math.min(Math.min(temp * A[i], min * A[i]), A[i]);
+            if (max > result) {
+                result = max;
+            }
+        }
+        return result;
+    }
+```
+
+
+
+#### method 3 two-pass
+
+```html
+https://leetcode.com/problems/maximum-product-subarray/discuss/48302/2-Passes-scan-beats-99
+```
+
+```java
+public int maxProduct3(int[] nums) {
+    int max = Integer.MIN_VALUE, product = 1;
+    int len = nums.length;
+
+    for(int i = 0; i < len; i++) {
+        max = Math.max(product *= nums[i], max);
+        if (nums[i] == 0) product = 1;
+    }
+
+    product = 1;
+    for(int i = len - 1; i >= 0; i--) {
+        max = Math.max(product *= nums[i], max);
+        if (nums[i] == 0) product = 1;
+    }
+
+    return max;
+}
+```
+
+#### summary:
+
+1. 当动态规划数组中，dp[i]只与dp[i-1]相关，那么这个时候可以用一个变量代替dp数组
+2. 考虑算法题的时候一定要尽量考虑清楚有哪些情况，不要忙着写代码，不然这样写出的代码也很难100%过测试用例的
+
+####
+
+####
+
+####
+
+####
+
+####
+
+####
+
+### 
+
+###
+
+
+
 
 
 ## HARD
