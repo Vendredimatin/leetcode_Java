@@ -2525,7 +2525,7 @@ public int largestRectangleArea(int[] heights) {
     }
 ```
 
-method2
+#### method 2
 
 对于每一个bar ｘ，将barｘ　看作最小的一个bar
 
