@@ -1,0 +1,10 @@
+
+psquid:S00117d"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶ÃŸ 8üÒò¾·-
+Š squid:ForLoopCounterChangedCheck$"XRefactor the code in order to not assign to this loop counter from within the loop body.(¦„¦W8È¡Ò¾·-
+Š squid:ForLoopCounterChangedCheck."XRefactor the code in order to not assign to this loop counter from within the loop body.(¦„¦W8£ŒØ¾·-
+Dsquid:S1659E"&Declare "rightMax" on a separate line.(üü…ð8üÒò¾·-
+psquid:S00117d"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶ÃŸ 8üÒò¾·-
+Esquid:S1659d"'Declare "right_max" on a separate line.(¶ÃŸ 8üÒò¾·-
+V
+squid:S106"9Replace this use of System.out or System.err by a logger.(Õ†›Î8ÑÛ²¾·-
+usquid:S00117D"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ý¹Í×ýÿÿÿÿ8üÒò¾·-

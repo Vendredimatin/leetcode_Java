@@ -1,0 +1,5 @@
+
+Ssquid:S1854 "7Remove this useless assignment to local variable "ans".(κ¥Όϋÿÿÿÿ
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(λ—κδϊÿÿÿÿ
+>squid:S1659""Declare "last" on a separate line.(όκ†ωÿÿÿÿ

@@ -1,0 +1,7 @@
+
+9squid:S1659"""Declare "high" on a separate line.(ë—¡Œ
+8squid:S1659""!Declare "sum" on a separate line.(ë—¡Œ
+N
+squid:S106"9Replace this use of System.out or System.err by a logger.(Œë–W
+nsquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 26 to the 15 allowed.(“®öÃþÿÿÿÿ
+wsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ä À¯úÿÿÿÿ

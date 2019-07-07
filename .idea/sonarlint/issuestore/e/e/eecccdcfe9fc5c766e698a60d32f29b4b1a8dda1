@@ -1,0 +1,11 @@
+
+>squid:S1659""Declare "down" on a separate line.(¶ƒ÷òûÿÿÿÿ
+>squid:S1659""Declare "left" on a separate line.(¶ƒ÷òûÿÿÿÿ
+<squid:S1659" Declare "up" on a separate line.(¶ƒ÷òûÿÿÿÿ
+;squid:S1659"Declare "j" on a separate line.(á”æåşÿÿÿÿ
+t
+squid:S135"YReduce the total number of break and continue statements in this loop to use at most one.(˜ïˆÿÿÿÿÿ
+O
+squid:S106"9Replace this use of System.out or System.err by a logger.( ƒè
+[squid:S2583M"DChange this condition so that it does not always evaluate to "false"(ËŠ“™
+nsquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 31 to the 15 allowed.(Ÿ‹Ûøÿÿÿÿ

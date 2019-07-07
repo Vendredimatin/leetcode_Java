@@ -1,0 +1,7 @@
+
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(è°†Óùÿÿÿÿ
+N
+squid:S106"9Replace this use of System.out or System.err by a logger.(Ù«Ë&
+nsquid:S3776!"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(æÔ—¬øÿÿÿÿ
+nsquid:S3776D"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(ŽºšËüÿÿÿÿ
+wsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ä À¯úÿÿÿÿ
