@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/liuhanyi/Desktop/code/leetcode_Java/leetcode_cpp/luogu/P1443.cpp
+iostream
+-
+vector
+-
+queue
+-
+limits.h
+/Users/liuhanyi/Desktop/code/leetcode_Java/leetcode_cpp/luogu/limits.h
+
+/Users/liuhanyi/Desktop/code/leetcode_Java/leetcode_cpp/luogu/luogu1219.cpp
+iostream
+-
+vector
+-
+string
+-
+
+/Users/liuhanyi/Desktop/code/leetcode_Java/leetcode_cpp/luogu/luogu2392.cpp
+iostream
+-
+vector
+-
+
